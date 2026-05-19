@@ -1,0 +1,12 @@
+<mat-grid-list cols="3" rowHeight="220px" gutterSize="16px" aria-label="Vehicle type statistics">
+  @for (stat of stats(); track stat.vehicleType) {
+    <mat-grid-tile>
+      <app-vehicle-type-stats-card
+        [vehicleType]="stat.vehicleType"
+        [dailyRevenuePotential]="stat.dailyRevenuePotential"
+        [estimatedIncidentCost]="stat.estimatedIncidentCost"
+        [vehiclesRented]="stat.vehiclesRented"
+      />
+    </mat-grid-tile>
+  }
+</mat-grid-list>

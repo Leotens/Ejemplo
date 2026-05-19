@@ -1,0 +1,35 @@
+@if (incident(); as currentIncident) {
+  <mat-card appearance="outlined" class="incident-card" role="article">
+    <mat-card-header>
+      <mat-card-title>{{ currentIncident.incidentType }}</mat-card-title>
+      <mat-card-subtitle>
+        {{ currentIncident.registeredAt | date: 'medium' }}
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>
+        <strong>{{ 'incident.vehicle-id' | translate }}:</strong>
+        {{ currentIncident.vehicleId }}
+      </p>
+      <p>
+        <strong>{{ 'incident.rental-id' | translate }}:</strong>
+        {{ currentIncident.rentalId ?? 'N/A' }}
+      </p>
+      <p>
+        <strong>{{ 'incident.estimated-repair-cost' | translate }}:</strong>
+        {{ currentIncident.estimatedRepairCost | currency }}
+      </p>
+      <p>
+        <strong>{{ 'incident.priority' | translate }}:</strong>
+        {{ currentIncident.priority }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+} @else {
+  <mat-card appearance="outlined" class="incident-card">
+    <mat-card-content>
+      {{ 'incident.empty' | translate }}
+    </mat-card-content>
+  </mat-card>
+}

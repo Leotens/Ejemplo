@@ -1,0 +1,22 @@
+<mat-card class="stats-card" appearance="outlined" role="article">
+  <mat-card-header>
+    <mat-card-title>{{ vehicleType() }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="metric">
+      <span>{{ 'analytics.daily-revenue-potential' | translate }}</span>
+      <strong>{{ dailyRevenuePotential() | currency }}</strong>
+    </div>
+
+    <div class="metric">
+      <span>{{ 'analytics.estimated-incident-cost' | translate }}</span>
+      <strong>{{ estimatedIncidentCost() | currency }}</strong>
+    </div>
+  </mat-card-content>
+
+  <mat-card-footer class="card-footer">
+    <span>{{ 'analytics.vehicles-rented' | translate }}</span>
+    <strong>{{ vehiclesRented() }}</strong>
+  </mat-card-footer>
+</mat-card>
